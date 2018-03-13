@@ -1,0 +1,21 @@
+{
+    "name": "dominicvonk/draftmvc-twig",
+    "description": "Draft MVC Twig Module",
+    "type": "library",
+    "version": "0.0.1",
+    "require": {
+        "twig/twig": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominic Vonk",
+            "email": "dominic@dominicvonk.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "DraftMVC": "src/"
+        }
+    }
+}
