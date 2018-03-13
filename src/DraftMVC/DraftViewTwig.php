@@ -14,8 +14,8 @@ class DraftViewTwig {
     private $filters = array();
     private $functions = array();
     public function __construct($file) {
-        $loader = new Twig_Loader_Filesystem(DRAFT_VIEWS);
-        $twig = new Twig_Environment($loader, array(
+        $loader = new \Twig_Loader_Filesystem(DRAFT_VIEWS);
+        $twig = new \Twig_Environment($loader, array(
             'cache' => DRAFT_STORAGE. '/cache/',
             'auto_reload' => 'true',
         ));
@@ -43,7 +43,7 @@ class DraftViewTwig {
     }
     public function __set($var, $val) {
         if (is_callable($val)) {
-            $this->twig->addFunction(new Twig_Function($var, $val));
+            $this->twig->addFunction(new \Twig_Function($var, $val));
             $this->data['_call_' . $var] = $val;
         } else {
             $this->data[$var] = $val;
@@ -51,10 +51,10 @@ class DraftViewTwig {
     }
     public function show() {
         foreach($this->filters as $name => $function) {
-            $this->twig->addFilter(new Twig_Filter($name, $function[0], $function[1]));
+            $this->twig->addFilter(new \Twig_Filter($name, $function[0], $function[1]));
         }
         foreach($this->functions as $name => $function) {
-            $this->twig->addFunction(new Twig_Function($name, $function[0], $function[1]));
+            $this->twig->addFunction(new \Twig_Function($name, $function[0], $function[1]));
         }
         $template = $this->twig->load($this->file . '.twig');
         return $template->render($this->data);
