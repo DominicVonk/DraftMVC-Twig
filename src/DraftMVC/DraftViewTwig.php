@@ -49,6 +49,9 @@ class DraftViewTwig {
             $this->data[$var] = $val;
         }
     }
+    public function setViewFile($file) {
+        $this->file = $file;
+    }
     public function show() {
         foreach($this->filters as $name => $function) {
             $this->twig->addFilter(new \Twig_Filter($name, $function[0], $function[1]));
