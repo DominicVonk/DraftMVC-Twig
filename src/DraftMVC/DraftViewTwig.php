@@ -19,6 +19,7 @@ class DraftViewTwig {
             'cache' => DRAFT_STORAGE. '/cache/',
             'auto_reload' => 'true',
         ));
+        $twig->addExtension(new \Twig_Extension_StringLoader());
         $this->file = $file;
         $this->twig = $twig;
     }

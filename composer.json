@@ -2,7 +2,7 @@
     "name": "dominicvonk/draftmvc-twig",
     "description": "Draft MVC Twig Module",
     "type": "library",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "require": {
         "twig/twig": "^2.4"
     },
