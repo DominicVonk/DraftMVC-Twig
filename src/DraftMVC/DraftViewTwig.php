@@ -18,7 +18,7 @@ class DraftViewTwig
     private $functions = array();
     public function __construct($file)
     {
-        $loader = new \Twig\Loader\FileSystemLoader(DRAFT_VIEWS);
+        $loader = new \Twig\Loader\FilesystemLoader(DRAFT_VIEWS);
         $twig = new \Twig\Environment($loader, array(
             'cache' => DRAFT_STORAGE . '/cache/',
             'auto_reload' => 'true',
